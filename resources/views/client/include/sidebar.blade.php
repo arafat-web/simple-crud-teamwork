@@ -10,7 +10,7 @@
         <nav class="navbar-dark">
             <ul class="navbar-nav sidenav">
                 <li class="nav-link bordered px-3 active">
-                    <a href="index.html" class="nav-link px-3 active">
+                    <a href="{{route('dashboard')}}" class="nav-link px-3 active">
                         <span class="me-2"><i class="bi bi-speedometer2"></i></span>
                         <span>Dashboard</span>
                     </a>

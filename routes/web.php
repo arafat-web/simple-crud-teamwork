@@ -37,4 +37,6 @@ Route::get('program',[ProgramController::class,'index'])->name('program');
 
 //-------------------Student Routes-------------------
 Route::get('add-student',[StudentController::class,'index'])->name('add.student');
-Route::get('all-students',[StudentController::class,'show'])->name('all.students');
+Route::get('all-students',[StudentController::class,'manage'])->name('all.students');
+Route::get('show-student',[StudentController::class,'show'])->name('show.student');
+Route::get('edit-student',[StudentController::class,'edit'])->name('edit.student');

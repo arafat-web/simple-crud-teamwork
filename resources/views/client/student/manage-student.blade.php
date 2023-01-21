@@ -39,7 +39,7 @@
                                 <td>CSE</td>
                                 <td>BSc</td>
                                 <td>
-                                    <a href="show-student.html" class="btn btn-sm btn-info">
+                                    <a href="{{route('show.student')}}" class="btn btn-sm btn-info">
                                         <i class="bi bi-eye"></i>
                                     </a>
                                     <a href="#" class="btn btn-sm btn-warning">
@@ -57,7 +57,7 @@
                                 <td>CSE</td>
                                 <td>BSc</td>
                                 <td>
-                                    <a href="show-student.html" class="btn btn-sm btn-info">
+                                    <a href="{{route('show.student')}}" class="btn btn-sm btn-info">
                                         <i class="bi bi-eye"></i>
                                     </a>
                                     <a href="#" class="btn btn-sm btn-warning">
@@ -75,7 +75,7 @@
                                 <td>CSE</td>
                                 <td>BSc</td>
                                 <td>
-                                    <a href="show-student.html" class="btn btn-sm btn-info">
+                                    <a href="{{route('show.student')}}" class="btn btn-sm btn-info">
                                         <i class="bi bi-eye"></i>
                                     </a>
                                     <a href="#" class="btn btn-sm btn-warning">
@@ -93,7 +93,7 @@
                                 <td>CSE</td>
                                 <td>BSc</td>
                                 <td>
-                                    <a href="show-student.html" class="btn btn-sm btn-info">
+                                    <a href="{{route('show.student')}}" class="btn btn-sm btn-info">
                                         <i class="bi bi-eye"></i>
                                     </a>
                                     <a href="#" class="btn btn-sm btn-warning">
@@ -111,7 +111,7 @@
                                 <td>CSE</td>
                                 <td>BSc</td>
                                 <td>
-                                    <a href="show-student.html" class="btn btn-sm btn-info">
+                                    <a href="{{route('show.student')}}" class="btn btn-sm btn-info">
                                         <i class="bi bi-eye"></i>
                                     </a>
                                     <a href="#" class="btn btn-sm btn-warning">
@@ -129,7 +129,7 @@
                                 <td>CSE</td>
                                 <td>BSc</td>
                                 <td>
-                                    <a href="show-student.html" class="btn btn-sm btn-info">
+                                    <a href="{{route('show.student')}}" class="btn btn-sm btn-info">
                                         <i class="bi bi-eye"></i>
                                     </a>
                                     <a href="#" class="btn btn-sm btn-warning">
@@ -147,7 +147,7 @@
                                 <td>CSE</td>
                                 <td>BSc</td>
                                 <td>
-                                    <a href="show-student.html" class="btn btn-sm btn-info">
+                                    <a href="{{route('show.student')}}" class="btn btn-sm btn-info">
                                         <i class="bi bi-eye"></i>
                                     </a>
                                     <a href="#" class="btn btn-sm btn-warning">
@@ -165,7 +165,7 @@
                                 <td>CSE</td>
                                 <td>BSc</td>
                                 <td>
-                                    <a href="show-student.html" class="btn btn-sm btn-info">
+                                    <a href="{{route('show.student')}}" class="btn btn-sm btn-info">
                                         <i class="bi bi-eye"></i>
                                     </a>
                                     <a href="#" class="btn btn-sm btn-warning">
@@ -183,7 +183,7 @@
                                 <td>CSE</td>
                                 <td>BSc</td>
                                 <td>
-                                    <a href="show-student.html" class="btn btn-sm btn-info">
+                                    <a href="{{route('show.student')}}" class="btn btn-sm btn-info">
                                         <i class="bi bi-eye"></i>
                                     </a>
                                     <a href="#" class="btn btn-sm btn-warning">
@@ -201,7 +201,7 @@
                                 <td>CSE</td>
                                 <td>BSc</td>
                                 <td>
-                                    <a href="show-student.html" class="btn btn-sm btn-info">
+                                    <a href="{{route('show.student')}}" class="btn btn-sm btn-info">
                                         <i class="bi bi-eye"></i>
                                     </a>
                                     <a href="#" class="btn btn-sm btn-warning">

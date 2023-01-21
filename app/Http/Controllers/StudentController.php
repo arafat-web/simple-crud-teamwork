@@ -13,10 +13,15 @@ class StudentController extends Controller
 
     }
     public function show(){
+        return view('client.student.show-student');
+    }
+    public function manage(){
+
         return view('client.student.manage-student');
     }
     public function edit(){
 
+        return view('client.student.edit-student');
     }
     public function update(){
 
