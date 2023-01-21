@@ -30,13 +30,13 @@
                         <div>
                             <ul class="navbar-nav ps-3">
                                 <li>
-                                    <a href="add-student.html" class="nav-link px-3">
+                                    <a href="{{route('add.student')}}" class="nav-link px-3">
                                         <span class="me-2"><i class="bi bi-1-circle"></i></span>
                                         <span>Add Student</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="all-student.html" class="nav-link px-3">
+                                    <a href="{{route('all.students')}}" class="nav-link px-3">
                                         <span class="me-2"><i class="bi bi-2-circle"></i></span>
                                         <span>All Students</span>
                                     </a>

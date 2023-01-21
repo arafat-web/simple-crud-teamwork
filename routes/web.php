@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProgramController;
+use App\Http\Controllers\StudentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,3 +33,8 @@ Route::get('profile',[ProfileController::class,'index'])->name('profile');
 
 //-------------------Profile Routes-------------------
 Route::get('program',[ProgramController::class,'index'])->name('program');
+
+
+//-------------------Student Routes-------------------
+Route::get('add-student',[StudentController::class,'index'])->name('add.student');
+Route::get('all-students',[StudentController::class,'show'])->name('all.students');
