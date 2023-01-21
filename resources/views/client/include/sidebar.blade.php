@@ -53,7 +53,7 @@
                 </li>
 
                 <li class="nav-link bordered px-3">
-                    <a href="programs.html" class="nav-link px-3">
+                    <a href="{{route('program')}}" class="nav-link px-3">
                         <span class="me-2"><i class="bi bi-journal-text"></i></span>
                         <span>Program</span>
                     </a>

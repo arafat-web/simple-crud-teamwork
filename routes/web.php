@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProgramController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,3 +28,7 @@ Route::get('department',[DepartmentController::class,'index'])->name('department
 
 //-------------------Profile Routes-------------------
 Route::get('profile',[ProfileController::class,'index'])->name('profile');
+
+
+//-------------------Profile Routes-------------------
+Route::get('program',[ProgramController::class,'index'])->name('program');
