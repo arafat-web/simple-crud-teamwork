@@ -46,7 +46,7 @@
                     </div>
                 </li>
                 <li class="nav-link bordered px-3">
-                    <a href="departments.html" class="nav-link px-3">
+                    <a href="{{route('department')}}" class="nav-link px-3">
                         <span class="me-2"><i class="bi bi-intersect"></i></span>
                         <span>Departments</span>
                     </a>

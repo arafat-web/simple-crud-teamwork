@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DepartmentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +16,9 @@ use App\Http\Controllers\DashboardController;
 //
 //Route::get('/', function () {return view('welcome');});
 
-Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
+//-------------------Dashboard Routes-------------------
+Route::get('/',[DashboardController::class,'index'])->name('dashboard');
+
+
+//-------------------Departments Routes-------------------
+Route::get('department',[DepartmentController::class,'index'])->name('department');
