@@ -22,7 +22,7 @@
                                 <div class="page-title fs-5 fw-bold mb-4">
                                     Edit Department
                                 </div>
-                                <form action="" method="post" enctype="multipart/form-data">
+                                <form action="{{route('update.department')}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row">
                                         <div class="col-md-7">
@@ -74,9 +74,10 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    @php $i=1 @endphp
                                     @foreach($departments as $department)
                                         <tr>
-                                            <td>1</td>
+                                            <td>{{$i++}}</td>
                                             <td>{{$department->dpt_name}}</td>
                                             <td>{{$department->dpt_code}}</td>
                                             <td><img src="{{asset($department->dpt_image)}}" class="img-fluid" width="120px"></td>
@@ -84,7 +85,7 @@
                                                 <a href="{{route('edit.department',[$department->id])}}" class="btn btn-sm btn-warning">
                                                     <i class="bi bi-pencil-square"></i>
                                                 </a>
-                                                <a href="#" class="btn btn-sm btn-danger">
+                                                <a href="{{route('delete.department',[$department->id])}}" class="btn btn-sm btn-danger">
                                                     <i class="bi bi-trash-fill"></i>
                                                 </a>
                                             </td>
