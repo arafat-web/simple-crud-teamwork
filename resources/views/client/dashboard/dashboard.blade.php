@@ -1,6 +1,6 @@
 @extends('client.master')
 @php
- $page = 'dashboard';
+    $page = 'dashboard';
 @endphp
 @section('title')
     Dashboard
@@ -24,7 +24,7 @@
                         <div class="card px-4 border-0 shadow-sm">
                             <div class="card-body">
                                 <div class="fs-5 text-end">
-                                    100
+                                    {{$total_st}}
                                 </div>
                                 <div style="margin-top: -10px;" class="fs-3 text-start text-info">
                                     <i class="bi bi-people-fill"></i>
@@ -39,7 +39,7 @@
                         <div class="card px-4 border-0 shadow-sm">
                             <div class="card-body">
                                 <div class="fs-5 text-end">
-                                    100
+                                    {{$total_dpt}}
                                 </div>
                                 <div style="margin-top: -10px;" class="fs-3 text-start text-warning">
                                     <i class="bi bi-intersect"></i>
@@ -54,7 +54,7 @@
                         <div class="card px-4 border-0 shadow-sm">
                             <div class="card-body">
                                 <div class="fs-5 text-end">
-                                    100
+                                    {{$total_pg}}
                                 </div>
                                 <div style="margin-top: -10px;" class="fs-3 text-start text-danger">
                                     <i class="bi bi-journal-text"></i>
@@ -78,82 +78,24 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
+                                <th>Phone</th>
+                                <th>Email</th>
                                 <th>Department</th>
                                 <th>Program</th>
-                                <th>Action</th>
+
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <td>201901002</td>
-                                <td>Arafat</td>
-                                <td>CSE</td>
-                                <td>BSc</td>
-                                <td>
-                                    <a href="#" class="btn btn-sm btn-warning">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-sm btn-danger">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                </td>
+                                @foreach($students as $st)
+                                    <td>{{$st->st_id}}</td>
+                                    <td>{{$st->st_name}}</td>
+                                    <td>{{$st->st_phone}}</td>
+                                    <td>{{$st->st_email}}</td>
+                                    <td>{{$st->dpt_name}}</td>
+                                    <td>{{$st->pg_name}}</td>
                             </tr>
-                            <tr>
-                                <td>201901002</td>
-                                <td>Arafat</td>
-                                <td>CSE</td>
-                                <td>BSc</td>
-                                <td>
-                                    <a href="#" class="btn btn-sm btn-warning">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-sm btn-danger">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>201901002</td>
-                                <td>Arafat</td>
-                                <td>CSE</td>
-                                <td>BSc</td>
-                                <td>
-                                    <a href="#" class="btn btn-sm btn-warning">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-sm btn-danger">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>201901002</td>
-                                <td>Arafat</td>
-                                <td>CSE</td>
-                                <td>BSc</td>
-                                <td>
-                                    <a href="#" class="btn btn-sm btn-warning">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-sm btn-danger">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>201901002</td>
-                                <td>Arafat</td>
-                                <td>CSE</td>
-                                <td>BSc</td>
-                                <td>
-                                    <a href="#" class="btn btn-sm btn-warning">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-sm btn-danger">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                </td>
-                            </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>

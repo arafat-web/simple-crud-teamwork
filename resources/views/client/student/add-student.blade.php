@@ -1,7 +1,7 @@
 @extends('client.master')
 @php
-        $sub_page = 'students';
-        $page = 'add.student';
+    $sub_page = 'students';
+    $page = 'add.student';
 @endphp
 @section('title')
     Add Student
@@ -70,8 +70,9 @@
                                         <label for="st_dept" class="form-label">Department</label>
                                         <select class="form-select" name="st_dept" id="st_dept">
                                             <option class="text-muted" selected disabled>Select a Department</option>
-                                            <option value="1">CSE</option>
-                                            <option value="2">EEE</option>
+                                            @foreach($depts as $dept)
+                                                <option value="{{$dept->id}}">{{$dept->dpt_name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -80,8 +81,9 @@
                                         <label for="st_program" class="form-label">Program</label>
                                         <select class="form-select" name="st_program" id="st_program">
                                             <option class="text-muted" selected disabled>Select a Program</option>
-                                            <option value="1">BSc</option>
-                                            <option value="2">MSc</option>
+                                            @foreach($programs as $program)
+                                                <option value="{{$program->id}}">{{$program->pg_name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>

@@ -18,6 +18,11 @@
                     <li class="breadcrumb-item active" aria-current="page">All Student</li>
                 </ol>
             </nav>
+            @if(session()->has('success'))
+                <div class="alert alert-success" role="alert">
+                    {{ session()->get('success') }}
+                </div>
+            @endif
             <div class="all-student mt-5">
                 <div class="card border-0 shadow-sm">
                     <div class="card-body">
@@ -27,6 +32,7 @@
                         <table id="datatable" class="table table-striped table-bordered" style="width:100%">
                             <thead>
                             <tr>
+                                <th>SL</th>
                                 <th>ID</th>
                                 <th>Name</th>
                                 <th>Phone</th>
@@ -36,186 +42,33 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>201901002</td>
-                                <td>Arafat</td>
-                                <td>017xxxxxxxx</td>
-                                <td>CSE</td>
-                                <td>BSc</td>
-                                <td>
-                                    <a href="{{route('show.student')}}" class="btn btn-sm btn-info">
-                                        <i class="bi bi-eye"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-sm btn-warning">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-sm btn-danger">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>201901002</td>
-                                <td>Arafat</td>
-                                <td>017xxxxxxxx</td>
-                                <td>CSE</td>
-                                <td>BSc</td>
-                                <td>
-                                    <a href="{{route('show.student')}}" class="btn btn-sm btn-info">
-                                        <i class="bi bi-eye"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-sm btn-warning">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-sm btn-danger">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>201901002</td>
-                                <td>Arafat</td>
-                                <td>017xxxxxxxx</td>
-                                <td>CSE</td>
-                                <td>BSc</td>
-                                <td>
-                                    <a href="{{route('show.student')}}" class="btn btn-sm btn-info">
-                                        <i class="bi bi-eye"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-sm btn-warning">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-sm btn-danger">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>201901002</td>
-                                <td>Arafat</td>
-                                <td>017xxxxxxxx</td>
-                                <td>CSE</td>
-                                <td>BSc</td>
-                                <td>
-                                    <a href="{{route('show.student')}}" class="btn btn-sm btn-info">
-                                        <i class="bi bi-eye"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-sm btn-warning">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-sm btn-danger">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>201901002</td>
-                                <td>Arafat</td>
-                                <td>017xxxxxxxx</td>
-                                <td>CSE</td>
-                                <td>BSc</td>
-                                <td>
-                                    <a href="{{route('show.student')}}" class="btn btn-sm btn-info">
-                                        <i class="bi bi-eye"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-sm btn-warning">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-sm btn-danger">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>201901002</td>
-                                <td>Arafat</td>
-                                <td>017xxxxxxxx</td>
-                                <td>CSE</td>
-                                <td>BSc</td>
-                                <td>
-                                    <a href="{{route('show.student')}}" class="btn btn-sm btn-info">
-                                        <i class="bi bi-eye"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-sm btn-warning">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-sm btn-danger">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>201901002</td>
-                                <td>Arafat</td>
-                                <td>017xxxxxxxx</td>
-                                <td>CSE</td>
-                                <td>BSc</td>
-                                <td>
-                                    <a href="{{route('show.student')}}" class="btn btn-sm btn-info">
-                                        <i class="bi bi-eye"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-sm btn-warning">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-sm btn-danger">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>201901002</td>
-                                <td>Arafat</td>
-                                <td>017xxxxxxxx</td>
-                                <td>CSE</td>
-                                <td>BSc</td>
-                                <td>
-                                    <a href="{{route('show.student')}}" class="btn btn-sm btn-info">
-                                        <i class="bi bi-eye"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-sm btn-warning">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-sm btn-danger">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>201901002</td>
-                                <td>Arafat</td>
-                                <td>017xxxxxxxx</td>
-                                <td>CSE</td>
-                                <td>BSc</td>
-                                <td>
-                                    <a href="{{route('show.student')}}" class="btn btn-sm btn-info">
-                                        <i class="bi bi-eye"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-sm btn-warning">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-sm btn-danger">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>201901002</td>
-                                <td>Arafat</td>
-                                <td>017xxxxxxxx</td>
-                                <td>CSE</td>
-                                <td>BSc</td>
-                                <td>
-                                    <a href="{{route('show.student')}}" class="btn btn-sm btn-info">
-                                        <i class="bi bi-eye"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-sm btn-warning">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-sm btn-danger">
-                                        <i class="bi bi-trash-fill"></i>
-                                    </a>
-                                </td>
-                            </tr>
+                            @php
+                                $i = 1;
+                            @endphp
+                            @foreach($students as $st)
+                                <tr>
+                                    <td>{{$i++}}</td>
+                                    <td>{{$st->st_id}}</td>
+                                    <td>{{$st->st_name}}</td>
+                                    <td>{{$st->st_phone}}</td>
+                                    <td>{{$st->dpt_name}}</td>
+                                    <td>{{$st->pg_name}}</td>
+                                    <td>
+                                        <a href="{{route('show.student', ['id'=>$st->id])}}"
+                                           class="btn btn-sm btn-info">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a href="{{route('edit.student', ['id'=>$st->id])}}"
+                                           class="btn btn-sm btn-warning">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </a>
+                                        <a href="{{route('delete.student', ['id'=>$st->id])}}"
+                                           class="btn btn-sm btn-danger">
+                                            <i class="bi bi-trash-fill"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
