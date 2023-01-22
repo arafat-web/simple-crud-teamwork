@@ -50,8 +50,29 @@ class ProgramController extends Controller
 
     }
     public function update(Request $request){
-        return $request;
+        $this->program = Program::find($request->id);
+        $this->program->pg_name = $request->pg_name;
+        $this->program->pg_code = $request->pg_code;
+        $this->program->save();
+        if ($request->file('pg_image')!=null){
+            $this->checkForImage($request);
+        }
+        return redirect(route('program'));
+
     }
+    private function checkForImage($request){
+
+        $this->program = Program::find($request->id);
+        if ($this->program->pg_image != null){
+            unlink($this->program->pg_image);
+        }
+        $this->program->pg_image = $this->getImageUrl($request);
+        $this->program->save();
+    }
+
+
+
+
     public function destroy($id){
         $this->program = Program::find($id);
         if ($this->program->pg_image!=null){
