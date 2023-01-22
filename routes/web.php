@@ -46,6 +46,7 @@ Route::post('update-program',[ProgramController::class,'update'])->name('update.
 
 //-------------------Student Routes-------------------
 Route::get('add-student',[StudentController::class,'index'])->name('add.student');
+Route::post('add-student',[StudentController::class,'store'])->name('store.student');
 Route::get('all-students',[StudentController::class,'manage'])->name('all.students');
 Route::get('show-student',[StudentController::class,'show'])->name('show.student');
 Route::get('edit-student',[StudentController::class,'edit'])->name('edit.student');

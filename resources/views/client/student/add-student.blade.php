@@ -19,14 +19,29 @@
                     <li class="breadcrumb-item active" aria-current="page">Add Student</li>
                 </ol>
             </nav>
-
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            @if(session()->has('success'))
+                <div class="alert alert-success" role="alert">
+                    {{ session()->get('success') }}
+                </div>
+            @endif
             <div class="latest-added mt-5">
                 <div class="card border-0 shadow-sm">
                     <div class="card-body">
                         <div class="page-title fs-5 fw-bold mb-4">
                             Add New Student
                         </div>
-                        <form action="" method="post">
+                        <form action="{{route('store.student')}}" enctype="multipart/form-data" method="post">
+                            @csrf
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="mb-3 px-2">
@@ -72,8 +87,8 @@
                                 </div>
                                 <div class="col-md-4 mt-md-4">
                                     <div class="mb-3 px-2">
-                                        <label for="st_admsn" class="form-label">Admission Date</label>
-                                        <input class="form-control" type="date" id="st_admsn" name="st_admsn">
+                                        <label for="st_admd" class="form-label">Admission Date</label>
+                                        <input class="form-control" type="date" id="st_admd" name="st_admd">
                                     </div>
                                 </div>
                                 <div class="col-md-4 mt-md-4">
