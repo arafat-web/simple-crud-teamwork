@@ -88,7 +88,7 @@
                                             <a href="#" class="btn btn-sm btn-warning">
                                                 <i class="bi bi-pencil-square"></i>
                                             </a>
-                                            <a href="#" class="btn btn-sm btn-danger">
+                                            <a href="{{route('delete.program',['id'=>$program->id])}}" class="btn btn-sm btn-danger">
                                                 <i class="bi bi-trash-fill"></i>
                                             </a>
                                         </td>
