@@ -18,6 +18,13 @@
                 </ol>
             </nav>
             <div class="row">
+                @if(Session('message'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{Session('message')}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
+
                 <div class="col-md-5">
                     <div class="add-dept mt-5">
                         <div class="card border-0 shadow-sm">
@@ -45,7 +52,7 @@
                                                 <div class="mb-3 px-2">
                                                     <label for="pg_image" class="form-label">New Image</label>
                                                     <input class="form-control" type="file" id="pg_image" name="pg_image">
-                                                    <img src="{{asset($program->pg_image)}}" class="img-fluid h-25" alt="">
+                                                    <img src="{{asset($program->pg_image)}}" class="img-fluid w-50" alt="">
                                                 </div>
 
                                                 <div class="col-12 mt-md-4">

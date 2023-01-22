@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Program;
 use Illuminate\Http\Request;
+use function PHPUnit\Framework\isEmpty;
 
 class ProgramController extends Controller
 {
@@ -24,7 +25,7 @@ class ProgramController extends Controller
             $this->program->pg_image = $this->getImageUrl($request);
         }
         $this->program->save();
-        return back();
+        return back()->with('message','Program Created Successfully!!!!');
     }
     private $image, $imageName,$imageUrl,$directory;
     private function getImageUrl($request){
@@ -42,6 +43,7 @@ class ProgramController extends Controller
     public function edit($id){
         $this->program = Program::find($id);
         $this->allProgram = Program::all();
+
         return view('client.program.program',[
             'program'=>$this->program,
             'edit'=>$id,
@@ -50,14 +52,39 @@ class ProgramController extends Controller
 
     }
     public function update(Request $request){
-        return $request;
+        $this->program = Program::find($request->id);
+        $this->program->pg_name = $request->pg_name;
+        $this->program->pg_code = $request->pg_code;
+        $this->program->save();
+        if ($request->file('pg_image')!=null){
+            $this->checkForImage($request);
+        }
+        return redirect(route('program'))->with('message','Program Updated Successfully!!!');
+
     }
+    private function checkForImage($request){
+
+        $this->program = Program::find($request->id);
+        if ($this->program->pg_image != null){
+            if (file_exists($this->program->pg_image)){
+                unlink($this->program->pg_image);
+            }
+        }
+        $this->program->pg_image = $this->getImageUrl($request);
+        $this->program->save();
+    }
+
+
+
+
     public function destroy($id){
         $this->program = Program::find($id);
         if ($this->program->pg_image!=null){
-            unlink($this->program->pg_image);
+            if (file_exists($this->program->pg_image)){
+                unlink($this->program->pg_image);
+            }
         }
         $this->program->delete();
-        return back();
+        return back()->with('message','Program Deleted Successfully!!!!');
     }
 }
