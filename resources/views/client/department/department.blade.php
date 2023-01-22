@@ -1,4 +1,7 @@
 @extends('client.master')
+@php
+    $page = 'department';
+@endphp
 @section('title')
     Department
 @endsection
