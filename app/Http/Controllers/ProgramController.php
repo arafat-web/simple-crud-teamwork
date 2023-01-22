@@ -43,7 +43,12 @@ class ProgramController extends Controller
     public function update(){
 
     }
-    public function destroy(){
-
+    public function destroy($id){
+        $this->program = Program::find($id);
+        if ($this->program->pg_image!=null){
+            unlink($this->program->pg_image);
+        }
+        $this->program->delete();
+        return back();
     }
 }
