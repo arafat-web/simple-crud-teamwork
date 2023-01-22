@@ -33,8 +33,10 @@ Route::get('edit-department/{id}',[DepartmentController::class,'edit'])->name('e
 Route::get('profile',[ProfileController::class,'index'])->name('profile');
 
 
-//-------------------Profile Routes-------------------
+//-------------------Program Routes-------------------
 Route::get('program',[ProgramController::class,'index'])->name('program');
+
+Route::post('add-program',[ProgramController::class,'create'])->name('add.program');
 
 
 //-------------------Student Routes-------------------
