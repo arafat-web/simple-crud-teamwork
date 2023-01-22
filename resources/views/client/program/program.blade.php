@@ -18,6 +18,13 @@
                 </ol>
             </nav>
             <div class="row">
+                @if(Session('message'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{Session('message')}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
+
                 <div class="col-md-5">
                     <div class="add-dept mt-5">
                         <div class="card border-0 shadow-sm">
