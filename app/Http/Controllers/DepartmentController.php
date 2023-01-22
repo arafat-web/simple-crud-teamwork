@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Department;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class DepartmentController extends Controller
 {
@@ -18,6 +19,7 @@ class DepartmentController extends Controller
             'dpt_image'=>'nullable',
         ]);
         Department::create($request);
+        Session::flash('success', 'Department Created Successfully');
         return redirect()->back();
     }
 
@@ -44,6 +46,7 @@ class DepartmentController extends Controller
         ]);
 
         Department::updateDepartment($request);
+        Session::flash('success', 'Department Updated Successfully');
         return redirect()->back();
     }
 
@@ -53,6 +56,7 @@ class DepartmentController extends Controller
             unlink($this->department->dpt_image);
         }
         $this->department->delete();
+        Session::flash('success', 'Department Deleted Successfully');
         return redirect()->back();
 
     }
