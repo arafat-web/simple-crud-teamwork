@@ -24,7 +24,9 @@ Route::get('/',[DashboardController::class,'index'])->name('dashboard');
 
 
 //-------------------Departments Routes-------------------
-Route::get('department',[DepartmentController::class,'index'])->name('department');
+Route::get('department',[DepartmentController::class,'show'])->name('department');
+Route::post('add-department',[DepartmentController::class,'create'])->name('add.department');
+Route::get('edit-department/{id}',[DepartmentController::class,'edit'])->name('edit.department');
 
 
 //-------------------Profile Routes-------------------
