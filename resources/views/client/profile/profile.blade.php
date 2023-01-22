@@ -1,4 +1,7 @@
 @extends('client.master')
+@php
+    $page = 'profile';
+@endphp
 @section('title')
     Profile
 @endsection

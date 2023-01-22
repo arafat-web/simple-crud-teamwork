@@ -1,4 +1,7 @@
 @extends('client.master')
+@php
+    $page = 'program';
+@endphp
 @section('title')
     Program
 @endsection
@@ -22,7 +25,8 @@
                                 <div class="page-title fs-5 fw-bold mb-4">
                                     Add Programs
                                 </div>
-                                <form action="" method="post">
+                                <form action="{{route('add.program')}}" method="post" enctype="multipart/form-data">
+                                    @csrf
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="mb-3 px-2">
@@ -71,76 +75,25 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    @php
+                                    $i=1
+                                    @endphp
+                                    @foreach($programs as $program)
                                     <tr>
-                                        <td>1</td>
-                                        <td>BSc</td>
-                                        <td>1220</td>
-                                        <td>Image</td>
+                                        <td>{{$i++}}</td>
+                                        <td>{{$program->pg_name}}</td>
+                                        <td>{{$program->pg_code}}</td>
+                                        <td><img src="{{asset($program->pg_image)}}"  class="img-fluid" alt=""></td>
                                         <td>
                                             <a href="#" class="btn btn-sm btn-warning">
                                                 <i class="bi bi-pencil-square"></i>
                                             </a>
-                                            <a href="#" class="btn btn-sm btn-danger">
+                                            <a href="{{route('delete.program',['id'=>$program->id])}}" class="btn btn-sm btn-danger">
                                                 <i class="bi bi-trash-fill"></i>
                                             </a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>BSc</td>
-                                        <td>1220</td>
-                                        <td>Image</td>
-                                        <td>
-                                            <a href="#" class="btn btn-sm btn-warning">
-                                                <i class="bi bi-pencil-square"></i>
-                                            </a>
-                                            <a href="#" class="btn btn-sm btn-danger">
-                                                <i class="bi bi-trash-fill"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>BSc</td>
-                                        <td>1220</td>
-                                        <td>Image</td>
-                                        <td>
-                                            <a href="#" class="btn btn-sm btn-warning">
-                                                <i class="bi bi-pencil-square"></i>
-                                            </a>
-                                            <a href="#" class="btn btn-sm btn-danger">
-                                                <i class="bi bi-trash-fill"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>BSc</td>
-                                        <td>1220</td>
-                                        <td>Image</td>
-                                        <td>
-                                            <a href="#" class="btn btn-sm btn-warning">
-                                                <i class="bi bi-pencil-square"></i>
-                                            </a>
-                                            <a href="#" class="btn btn-sm btn-danger">
-                                                <i class="bi bi-trash-fill"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>BSc</td>
-                                        <td>1220</td>
-                                        <td>Image</td>
-                                        <td>
-                                            <a href="#" class="btn btn-sm btn-warning">
-                                                <i class="bi bi-pencil-square"></i>
-                                            </a>
-                                            <a href="#" class="btn btn-sm btn-danger">
-                                                <i class="bi bi-trash-fill"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>
