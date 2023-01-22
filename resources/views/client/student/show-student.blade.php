@@ -1,4 +1,7 @@
 @extends('client.master')
+@php
+    $sub_page = 'students';
+@endphp
 @section('title')
     Show Student
 @endsection

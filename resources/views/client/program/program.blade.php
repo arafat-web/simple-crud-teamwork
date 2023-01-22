@@ -1,4 +1,7 @@
 @extends('client.master')
+@php
+    $page = 'program';
+@endphp
 @section('title')
     Program
 @endsection

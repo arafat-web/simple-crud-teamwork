@@ -1,4 +1,8 @@
 @extends('client.master')
+@php
+        $sub_page = 'students';
+        $page = 'add.student';
+@endphp
 @section('title')
     Add Student
 @endsection
@@ -80,8 +84,8 @@
                                 </div>
                                 <div class="col-12 mt-md-4">
                                     <div class="mb-3 px-2">
-                                        <button type="submit" class="btn btn-success"> Submit </button>
-                                        <button type="reset" class="btn btn-warning"> Reset </button>
+                                        <button type="submit" class="btn btn-success"> Submit</button>
+                                        <button type="reset" class="btn btn-warning"> Reset</button>
                                     </div>
                                 </div>
                             </div>
