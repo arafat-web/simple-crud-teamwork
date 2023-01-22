@@ -12,6 +12,7 @@ class ProgramController extends Controller
         $this->program = Program::all();
         return view('client.program.program',[
             'programs'=>$this->program,
+            'edit'=>0,
         ]);
     }
     public function create(Request $request){
@@ -37,11 +38,19 @@ class ProgramController extends Controller
     public function show(){
 
     }
-    public function edit(){
+    public $allProgram;
+    public function edit($id){
+        $this->program = Program::find($id);
+        $this->allProgram = Program::all();
+        return view('client.program.program',[
+            'program'=>$this->program,
+            'edit'=>$id,
+            'programs'=>$this->allProgram,
+        ]);
 
     }
-    public function update(){
-
+    public function update(Request $request){
+        return $request;
     }
     public function destroy($id){
         $this->program = Program::find($id);

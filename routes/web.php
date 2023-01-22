@@ -36,8 +36,10 @@ Route::get('profile',[ProfileController::class,'index'])->name('profile');
 //-------------------Program Routes-------------------
 Route::get('program',[ProgramController::class,'index'])->name('program');
 Route::get('delete-program/{id}',[ProgramController::class,'destroy'])->name('delete.program');
+Route::get('edit-program/{id}',[ProgramController::class,'edit'])->name('edit.program');
 
 Route::post('add-program',[ProgramController::class,'create'])->name('add.program');
+Route::post('update-program',[ProgramController::class,'update'])->name('update.program');
 
 
 //-------------------Student Routes-------------------
