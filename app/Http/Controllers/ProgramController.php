@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Program;
 use Illuminate\Http\Request;
+use function PHPUnit\Framework\isEmpty;
 
 class ProgramController extends Controller
 {
@@ -65,7 +66,9 @@ class ProgramController extends Controller
 
         $this->program = Program::find($request->id);
         if ($this->program->pg_image != null){
-            unlink($this->program->pg_image);
+            if (file_exists($this->program->pg_image)){
+                unlink($this->program->pg_image);
+            }
         }
         $this->program->pg_image = $this->getImageUrl($request);
         $this->program->save();
@@ -77,7 +80,9 @@ class ProgramController extends Controller
     public function destroy($id){
         $this->program = Program::find($id);
         if ($this->program->pg_image!=null){
-            unlink($this->program->pg_image);
+            if (file_exists($this->program->pg_image)){
+                unlink($this->program->pg_image);
+            }
         }
         $this->program->delete();
         return back()->with('message','Program Deleted Successfully!!!!');
