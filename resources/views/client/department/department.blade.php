@@ -17,6 +17,18 @@
                     <li class="breadcrumb-item active" aria-current="page">Departments</li>
                 </ol>
             </nav>
+            @if(Session::has('success'))
+                <p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('success') }}</p>
+            @endif
+            @if ($errors->any())
+                <div class="alert alert-danger mt-3 mb-3">
+                    <ul class="mb-0">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <div class="row">
                 <div class="col-md-5">
                     <div class="add-dept mt-5">
@@ -25,6 +37,7 @@
                                 <div class="page-title fs-5 fw-bold mb-4">
                                     Add Department
                                 </div>
+
                                 <form action="{{route('add.department')}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row">
@@ -79,7 +92,7 @@
                                         <td>{{$i++}}</td>
                                         <td>{{$department->dpt_name}}</td>
                                         <td>{{$department->dpt_code}}</td>
-                                        <td><img src="{{asset($department->dpt_image)}}" class="img-fluid" width="120px"></td>
+                                        <td><img src="{{asset($department->dpt_image)}}" class="img-fluid" width="80px" height="80px"></td>
                                         <td>
                                             <a href="{{route('edit.department',[$department->id])}}" class="btn btn-sm btn-warning">
                                                 <i class="bi bi-pencil-square"></i>

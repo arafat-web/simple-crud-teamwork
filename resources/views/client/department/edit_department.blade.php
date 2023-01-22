@@ -14,6 +14,18 @@
                     <li class="breadcrumb-item active" aria-current="page">Edit Departments</li>
                 </ol>
             </nav>
+            @if(Session::has('success'))
+                <p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('success') }}</p>
+            @endif
+            @if ($errors->any())
+                <div class="alert alert-danger mt-3 mb-3">
+                    <ul class="mb-0">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <div class="row">
                 <div class="col-md-5">
                     <div class="add-dept mt-5">
@@ -41,7 +53,7 @@
                                             </div>
                                             <div class="mb-3 px-2">
                                                 <label for="cat_image" class="form-label">Existing Image</label>
-                                                <img src="{{asset($department->dpt_image)}}" class="form-control" alt="" width="120px">
+                                                <img src="{{asset($department->dpt_image)}}" class="form-control" alt="" width="80px" height="80px">
                                             </div>
                                             <div class="col-12 mt-md-4">
                                                 <div class="mb-3 px-2">
