@@ -17,6 +17,10 @@ class ProgramController extends Controller
         ]);
     }
     public function create(Request $request){
+        $request->validate([
+            'pg_name'=>'required',
+            'pg_code'=>'required',
+        ]);
         $this->program = new Program();
         $this->program->pg_name = $request->pg_name;
         $this->program->pg_code = $request->pg_code;
@@ -52,6 +56,11 @@ class ProgramController extends Controller
 
     }
     public function update(Request $request){
+        $request->validate([
+            'id'=>'required',
+            'pg_name'=>'required',
+            'pg_code'=>'required',
+        ]);
         $this->program = Program::find($request->id);
         $this->program->pg_name = $request->pg_name;
         $this->program->pg_code = $request->pg_code;

@@ -9,55 +9,83 @@ use Illuminate\Support\Facades\Session;
 class DepartmentController extends Controller
 {
     public $department;
+    public $image,$imageName,$directory,$imageUrl;
     public function index(){
-        return view('client.department.department');
+        $this->department = Department::all();
+        return view('client.department.department',[
+            'departments'=>$this->department,
+            'edit'=>0
+        ]);
     }
     public function create(Request $request){
         $request->validate([
-            'dpt_name'=>'required|max:255',
-            'dpt_code'=>'required|max:255',
-            'dpt_image'=>'nullable',
+            'dpt_name'=>'required',
+            'dpt_code'=>'required',
         ]);
-        Department::create($request);
-        Session::flash('success', 'Department Created Successfully');
-        return redirect()->back();
+        $this->department = new Department();
+        $this->department->dpt_name = $request->dpt_name;
+        $this->department->dpt_code = $request->dpt_code;
+        if ($request->file('dpt_image')!=null){
+            $this->department->dpt_image = $this->getImageUrl($request);
+        }
+        $this->department->save();
+        return back()->with('message','Department Added Successfully!!!');
+    }
+    private function getImageUrl($request){
+        $this->image = $request->file('dpt_image');
+        $this->imageName = rand().'.'.$this->image->getClientOriginalExtension();
+        $this->directory = 'upload/department/';
+        $this->imageUrl = $this->directory.$this->imageName;
+        $this->image->move($this->directory,$this->imageName);
+        return $this->imageUrl;
     }
 
-
-
     public function show(){
-        return view('client.department.department',[
-           'departments'=> Department::latest()->get(),
-        ]);
 
     }
     public function edit($id){
-        return view('client.department.edit_department',[
+        return view('client.department.department',[
+            'departments'=>Department::all(),
             'department'=>Department::find($id),
-            'departments'=> Department::latest()->get(),
+            'edit'=>$id,
         ]);
-
     }
-    public function updateDepartment(Request $request){
+    public function update(Request $request){
         $request->validate([
-            'dpt_name'=>'required|max:255',
-            'dpt_code'=>'required|max:255',
-            'dpt_image'=>'nullable',
+            'id'=>'required',
+            'dpt_name'=>'required',
+            'dpt_code'=>'required',
         ]);
+        $this->department = Department::find($request->id);
+        $this->department->dpt_name = $request->dpt_name;
+        $this->department->dpt_code = $request->dpt_code;
 
-        Department::updateDepartment($request);
-        Session::flash('success', 'Department Updated Successfully');
-        return redirect()->back();
+        $this->department->save();
+
+        if ($request->file('dpt_image')!=null){
+            $this->changeImageUrl($request);
+        }
+        return redirect(route('department'))->with('message','Department Updated Successfully!!!');
     }
-
-    public function deleteDepartment(Request $request){
+    private function changeImageUrl($request){
         $this->department = Department::find($request->id);
         if ($this->department->dpt_image!=null){
-            unlink($this->department->dpt_image);
+            if (file_exists($this->department->dpt_image)){
+                unlink($this->department->dpt_image);
+            }
+        }
+        $this->department->dpt_image = $this->getImageUrl($request);
+        $this->department->save();
+    }
+
+    public function delete($id){
+        $this->department = Department::find($id);
+        if ($this->department->dpt_image!=null){
+            if (file_exists($this->department->dpt_image)){
+                unlink($this->department->dpt_image);
+            }
         }
         $this->department->delete();
-        Session::flash('success', 'Department Deleted Successfully');
-        return redirect()->back();
-
+        return back()->with('message','Department Deleted Successfully!!');
     }
 }

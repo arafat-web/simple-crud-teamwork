@@ -17,6 +17,17 @@ Program
                 <li class="breadcrumb-item active" aria-current="page">Programs</li>
             </ol>
         </nav>
+        @if ($errors->any())
+            <div class="alert alert-danger alert-dismissible">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="row">
             @if(Session('message'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -24,6 +35,7 @@ Program
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             @endif
+
 
             <div class="col-md-5">
                 <div class="add-dept mt-5">
@@ -41,13 +53,11 @@ Program
                                         <div class="mb-3 px-2">
                                             <label for="pg_name" class="form-label">Name</label>
                                             <input type="hidden" name="id" value="{{$program->id}}">
-                                            <input class="form-control" type="text" value="{{$program->pg_name}}"
-                                                id="pg_name" name="pg_name">
+                                            <input class="form-control" type="text" value="{{$program->pg_name}}" id="pg_name" name="pg_name">
                                         </div>
                                         <div class="mb-3 px-2">
                                             <label for="pg_code" class="form-label">Code</label>
-                                            <input class="form-control" type="text" value="{{$program->pg_code}}"
-                                                id="pg_code" name="pg_code">
+                                            <input class="form-control" type="text" value="{{$program->pg_code}}" id="pg_code" name="pg_code">
                                         </div>
                                         <div class="mb-3 px-2">
                                             <label for="pg_image" class="form-label">New Image</label>
@@ -70,19 +80,22 @@ Program
                             <div class="page-title fs-5 fw-bold mb-4">
                                 Add Programs
                             </div>
+
                             <form action="{{route('add.program')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="mb-3 px-2">
                                             <label for="pg_name" class="form-label">Name</label>
-                                            <input class="form-control" placeholder="BSc" type="text" id="pg_name"
-                                                name="pg_name">
+                                            <input class="form-control" placeholder="BSc" type="text" id="pg_name" name="pg_name">
+
                                         </div>
                                         <div class="mb-3 px-2">
                                             <label for="pg_code" class="form-label">Code</label>
-                                            <input class="form-control" placeholder="B-123" type="text" id="pg_code"
-                                                name="pg_code">
+                                            <input class="form-control" placeholder="B-123" type="text" id="pg_code" name="pg_code">
+{{--                                            @error('pg_code')--}}
+{{--                                            <span class="text-danger">{{$message}}</span>--}}
+{{--                                            @enderror--}}
                                         </div>
                                         <div class="mb-3 px-2">
                                             <label for="pg_image" class="form-label">Image</label>
