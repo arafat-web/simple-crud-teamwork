@@ -18,6 +18,10 @@ class DepartmentController extends Controller
         ]);
     }
     public function create(Request $request){
+        $request->validate([
+            'dpt_name'=>'required',
+            'dpt_code'=>'required',
+        ]);
         $this->department = new Department();
         $this->department->dpt_name = $request->dpt_name;
         $this->department->dpt_code = $request->dpt_code;
@@ -47,6 +51,11 @@ class DepartmentController extends Controller
         ]);
     }
     public function update(Request $request){
+        $request->validate([
+            'id'=>'required',
+            'dpt_name'=>'required',
+            'dpt_code'=>'required',
+        ]);
         $this->department = Department::find($request->id);
         $this->department->dpt_name = $request->dpt_name;
         $this->department->dpt_code = $request->dpt_code;

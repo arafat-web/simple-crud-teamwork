@@ -38,11 +38,11 @@
                                                 <div class="mb-3 px-2">
                                                     <label for="dpt_code" class="form-label">Name</label>
                                                     <input type="hidden" name="id" value="{{$department->id}}">
-                                                    <input class="form-control" type="text" value="{{$department->dpt_name}}"  id="dpt_name" name="dpt_name" required>
+                                                    <input class="form-control" type="text" value="{{$department->dpt_name}}"  id="dpt_name" name="dpt_name">
                                                 </div>
                                                 <div class="mb-3 px-2">
                                                     <label for="dpt_code" class="form-label">Code</label>
-                                                    <input class="form-control" type="text" value="{{$department->dpt_code}}" id="dpt_code" name="dpt_code" required>
+                                                    <input class="form-control" type="text" value="{{$department->dpt_code}}" id="dpt_code" name="dpt_code">
                                                 </div>
                                                 <div class="mb-3 px-2">
                                                     <label for="dpt_image" class="form-label">New Image</label>
@@ -73,11 +73,11 @@
                                             <div class="col-md-12">
                                                 <div class="mb-3 px-2">
                                                     <label for="dpt_code" class="form-label">Name</label>
-                                                    <input class="form-control" placeholder="CSE" type="text" id="dpt_name" name="dpt_name" required>
+                                                    <input class="form-control" placeholder="CSE" type="text" id="dpt_name" name="dpt_name">
                                                 </div>
                                                 <div class="mb-3 px-2">
                                                     <label for="dpt_code" class="form-label">Code</label>
-                                                    <input class="form-control" placeholder="1220" type="text" id="dpt_code" name="dpt_code" required>
+                                                    <input class="form-control" placeholder="1220" type="text" id="dpt_code" name="dpt_code">
                                                 </div>
                                                 <div class="mb-3 px-2">
                                                     <label for="dpt_image" class="form-label">Image</label>
