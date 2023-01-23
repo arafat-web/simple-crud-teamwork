@@ -14,6 +14,17 @@
                     <li class="breadcrumb-item active" aria-current="page">Departments</li>
                 </ol>
             </nav>
+            @if ($errors->any())
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
             <div class="row">
                 @if(Session('message'))
@@ -68,14 +79,14 @@
                                         Add Department
                                     </div>
                                     {{--                            -----------validation warning start------------------}}
-                                    @if($errors->any())
-                                        @foreach($errors->all() as $error)
-                                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                                {{$error}}
-                                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                            </div>
-                                        @endforeach
-                                    @endif
+{{--                                    @if($errors->any())--}}
+{{--                                        @foreach($errors->all() as $error)--}}
+{{--                                            <div class="alert alert-warning alert-dismissible fade show" role="alert">--}}
+{{--                                                {{$error}}--}}
+{{--                                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>--}}
+{{--                                            </div>--}}
+{{--                                        @endforeach--}}
+{{--                                    @endif--}}
 
                                     {{--                            -----------validation warning end------------------}}
                                     <form action="{{route('add.department')}}" method="post" enctype="multipart/form-data">
@@ -89,6 +100,7 @@
                                                 <div class="mb-3 px-2">
                                                     <label for="dpt_code" class="form-label">Code</label>
                                                     <input class="form-control" placeholder="1220" type="text" id="dpt_code" name="dpt_code">
+
                                                 </div>
                                                 <div class="mb-3 px-2">
                                                     <label for="dpt_image" class="form-label">Image</label>
