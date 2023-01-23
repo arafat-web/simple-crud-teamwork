@@ -50,4 +50,5 @@ Route::post('store-student',[StudentController::class,'store'])->name('store.stu
 Route::get('all-students',[StudentController::class,'manage'])->name('all.students');
 Route::get('show-student/{id}',[StudentController::class,'show'])->name('show.student');
 Route::get('edit-student/{id}',[StudentController::class,'edit'])->name('edit.student');
+Route::post('update-student',[StudentController::class,'update'])->name('update.student');
 Route::get('delete-student/{id}',[StudentController::class,'destroy'])->name('delete.student');
