@@ -67,6 +67,17 @@
                                     <div class="page-title fs-5 fw-bold mb-4">
                                         Add Department
                                     </div>
+                                    {{--                            -----------validation warning start------------------}}
+                                    @if($errors->any())
+                                        @foreach($errors->all() as $error)
+                                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                                {{$error}}
+                                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                            </div>
+                                        @endforeach
+                                    @endif
+
+                                    {{--                            -----------validation warning end------------------}}
                                     <form action="{{route('add.department')}}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <div class="row">
