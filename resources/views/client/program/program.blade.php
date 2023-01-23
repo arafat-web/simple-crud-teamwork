@@ -41,13 +41,11 @@ Program
                                         <div class="mb-3 px-2">
                                             <label for="pg_name" class="form-label">Name</label>
                                             <input type="hidden" name="id" value="{{$program->id}}">
-                                            <input class="form-control" type="text" value="{{$program->pg_name}}"
-                                                id="pg_name" name="pg_name">
+                                            <input class="form-control" type="text" value="{{$program->pg_name}}" id="pg_name" name="pg_name" required>
                                         </div>
                                         <div class="mb-3 px-2">
                                             <label for="pg_code" class="form-label">Code</label>
-                                            <input class="form-control" type="text" value="{{$program->pg_code}}"
-                                                id="pg_code" name="pg_code">
+                                            <input class="form-control" type="text" value="{{$program->pg_code}}" id="pg_code" name="pg_code" required>
                                         </div>
                                         <div class="mb-3 px-2">
                                             <label for="pg_image" class="form-label">New Image</label>
@@ -76,13 +74,11 @@ Program
                                     <div class="col-md-12">
                                         <div class="mb-3 px-2">
                                             <label for="pg_name" class="form-label">Name</label>
-                                            <input class="form-control" placeholder="BSc" type="text" id="pg_name"
-                                                name="pg_name">
+                                            <input class="form-control" placeholder="BSc" type="text" id="pg_name" name="pg_name" required>
                                         </div>
                                         <div class="mb-3 px-2">
                                             <label for="pg_code" class="form-label">Code</label>
-                                            <input class="form-control" placeholder="B-123" type="text" id="pg_code"
-                                                name="pg_code">
+                                            <input class="form-control" placeholder="B-123" type="text" id="pg_code" name="pg_code" required>
                                         </div>
                                         <div class="mb-3 px-2">
                                             <label for="pg_image" class="form-label">Image</label>
