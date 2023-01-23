@@ -25,11 +25,11 @@ Route::get('/',[DashboardController::class,'index'])->name('dashboard');
 
 //-------------------Departments Routes-------------------
 Route::get('/department',[DepartmentController::class,'show'])->name('department');
-Route::post('/add-department',[DepartmentController::class,'create'])->name('add.department');
 Route::get('/edit-department/{id}',[DepartmentController::class,'edit'])->name('edit.department');
-Route::post('/update-department',[DepartmentController::class,'updateDepartment'])->name('update.department');
 Route::get('/delete-department/{id}',[DepartmentController::class,'deleteDepartment'])->name('delete.department');
 
+Route::post('/add-department',[DepartmentController::class,'create'])->name('add.department');
+Route::post('/update-department',[DepartmentController::class,'updateDepartment'])->name('update.department');
 
 //-------------------Profile Routes-------------------
 Route::get('profile',[ProfileController::class,'index'])->name('profile');
