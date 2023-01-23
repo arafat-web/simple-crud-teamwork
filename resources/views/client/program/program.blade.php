@@ -131,7 +131,7 @@
                                         <td>{{$i++}}</td>
                                         <td>{{$program->pg_name}}</td>
                                         <td>{{$program->pg_code}}</td>
-                                        <td><img src="{{asset($program->pg_image)}}"  class="img-fluid" width="120px" height="120px" alt=""></td>
+                                        <td><img src="{{asset($program->pg_image)}}"  class="img-fluid" width="80px" height="80px" alt=""></td>
                                         <td>
                                             <a href="{{route('edit.program',['id'=>$program->id])}}" class="btn btn-sm btn-warning">
                                                 <i class="bi bi-pencil-square"></i>
