@@ -1,7 +1,4 @@
 @extends('client.master')
-@php
-    $page = 'department';
-@endphp
 @section('title')
     Department
 @endsection
@@ -17,28 +14,17 @@
                     <li class="breadcrumb-item active" aria-current="page">Departments</li>
                 </ol>
             </nav>
-            @if(Session::has('success'))
-                <p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('success') }}</p>
-            @endif
-            @if ($errors->any())
-                <div class="alert alert-danger mt-3 mb-3">
-                    <ul class="mb-0">
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+
             <div class="row">
                 <div class="col-md-5">
                     <div class="add-dept mt-5">
                         <div class="card border-0 shadow-sm">
+
                             <div class="card-body">
                                 <div class="page-title fs-5 fw-bold mb-4">
                                     Add Department
                                 </div>
-
-                                <form action="{{route('add.department')}}" method="post" enctype="multipart/form-data">
+                                <form action="" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row">
                                         <div class="col-md-12">
@@ -65,6 +51,7 @@
                                     </div>
                                 </form>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -86,23 +73,20 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @php $i=1 @endphp
-                                    @foreach($departments as $department)
                                     <tr>
-                                        <td>{{$i++}}</td>
-                                        <td>{{$department->dpt_name}}</td>
-                                        <td>{{$department->dpt_code}}</td>
-                                        <td><img src="{{asset($department->dpt_image)}}" width="80px" height="60px"></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><img src="" width="80px" height="60px"></td>
                                         <td>
-                                            <a href="{{route('edit.department',[$department->id])}}" class="btn btn-sm btn-warning">
+                                            <a href="#" class="btn btn-sm btn-warning">
                                                 <i class="bi bi-pencil-square"></i>
                                             </a>
-                                            <a href="{{route('delete.department',[$department->id])}}" class="btn btn-sm btn-danger">
+                                            <a href="#" class="btn btn-sm btn-danger">
                                                 <i class="bi bi-trash-fill"></i>
                                             </a>
                                         </td>
                                     </tr>
-                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>
