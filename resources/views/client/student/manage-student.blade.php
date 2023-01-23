@@ -76,4 +76,10 @@
             </div>
         </div>
     </main>
+
+    <script>
+        $(document).ready(function () {
+            $('#datatable').DataTable();
+        });
+    </script>
 @endsection

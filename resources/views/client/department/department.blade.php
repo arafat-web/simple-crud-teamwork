@@ -92,7 +92,7 @@
                                         <td>{{$i++}}</td>
                                         <td>{{$department->dpt_name}}</td>
                                         <td>{{$department->dpt_code}}</td>
-                                        <td><img src="{{asset($department->dpt_image)}}" class="img-fluid" width="80px" height="80px"></td>
+                                        <td><img src="{{asset($department->dpt_image)}}" width="80px" height="60px"></td>
                                         <td>
                                             <a href="{{route('edit.department',[$department->id])}}" class="btn btn-sm btn-warning">
                                                 <i class="bi bi-pencil-square"></i>
@@ -110,7 +110,12 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </main>
+
+    <script>
+        $(document).ready(function () {
+            $('#datatable').DataTable();
+        });
+    </script>
 @endsection

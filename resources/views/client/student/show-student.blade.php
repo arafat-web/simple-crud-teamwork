@@ -24,20 +24,20 @@
                         <div class="card border-0 shadow-sm">
                             <div class="card-body">
                                 <div class="page-title text-center fs-5 fw-bold mb-4">
-                                    Arafat's Information
+                                    {{$student->st_name}}'s Information
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
                                         <img class="d-block m-auto"
                                              style="width: 200px; height: 200px; border-radius: 50%;"
-                                             src="https://avatars.githubusercontent.com/u/26932301?v=4" alt="">
-                                        <h5 class="text-center mt-3">Arafat Hossain</h5>
-                                        <h6 class="text-center text-muted">BSc In CSE</h6>
-                                        <h6 class="text-center">017xxxxxxxx</h6>
-                                        <h6 class="text-center">arafat@gmail.com</h6>
+                                             src="{{asset($student->st_image)}}" alt="">
+                                        <h5 class="text-center mt-3">{{$student->st_name}}</h5>
+                                        <h6 class="text-center text-muted">{{$student->pg_name}} In {{$student->dpt_name}}</h6>
+                                        <h6 class="text-center">{{$student->st_phone}}</h6>
+                                        <h6 class="text-center">{{$student->st_email}}</h6>
                                         <div class="text-center mt-3">
-                                            <a href="{{route('edit.student')}}" class="btn btn-warning">Edit</a>
-                                            <a href="#" class="btn btn-danger">Delete</a>
+                                            <a href="{{route('edit.student', ['id'   => $student->id])}}" class="btn btn-warning">Edit</a>
+                                            <a href="{{route('delete.student', ['id' =>$student->id])}}" class="btn btn-danger">Delete</a>
                                         </div>
                                     </div>
                                 </div>

@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="{{asset('assets')}}/css/bootstrap.css">
     <link rel="stylesheet" href="{{asset('assets')}}/css/style.css">
     <link rel="stylesheet" href="{{asset('assets')}}/css/dataTables.bootstrap5.min.css">
+
+    <script src="{{asset('assets')}}/js/jquery-3.5.1.js"></script>
+    <script src="{{asset('assets')}}/js/jquery.dataTables.min.js"></script>
+    <script src="{{asset('assets')}}/js/dataTables.bootstrap5.min.js"></script>
 </head>
 
 <body>
@@ -26,23 +30,9 @@
 @yield('content')
 <!-- main content end-->
 
-<script src="{{asset('assets')}}/js/jquery-3.5.1.js"></script>
-<script src="{{asset('assets')}}/js/jquery.dataTables.min.js"></script>
-<script src="{{asset('assets')}}/js/dataTables.bootstrap5.min.js"></script>
 <script src="{{asset('assets')}}/js/bootstrap.bundle.min.js"></script>
 
-<script>
-    $(document).ready(function () {
-        $('#datatable').DataTable({
-            paging: false,
-            info: true,
-            dom: 'Bfrtip',
-            select: true,
-            pageLength: 5,
-            recordsTotal: 10,
-        });
-    });
-</script>
+
 </body>
 
 </html>

@@ -131,7 +131,7 @@
                                         <td>{{$i++}}</td>
                                         <td>{{$program->pg_name}}</td>
                                         <td>{{$program->pg_code}}</td>
-                                        <td><img src="{{asset($program->pg_image)}}"  class="img-fluid" width="120px" height="120px" alt=""></td>
+                                        <td><img src="{{asset($program->pg_image)}}" width="80px" height="60px" alt=""></td>
                                         <td>
                                             <a href="{{route('edit.program',['id'=>$program->id])}}" class="btn btn-sm btn-warning">
                                                 <i class="bi bi-pencil-square"></i>
@@ -149,7 +149,12 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </main>
+
+    <script>
+        $(document).ready(function () {
+            $('#datatable').DataTable();
+        });
+    </script>
 @endsection

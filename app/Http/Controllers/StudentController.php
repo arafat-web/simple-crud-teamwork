@@ -33,8 +33,8 @@ class StudentController extends Controller
         if ($request->hasFile('st_image')) {
             $path = $request->file('st_image');
             $imageName = rand() . '.' . $path->getClientOriginalExtension();
-            $this->getImage = 'upload/' . $imageName;
-            $path->move(public_path('upload/'), $imageName);
+            $this->getImage = 'upload/student/' . $imageName;
+            $path->move(public_path('upload/student/'), $imageName);
         }
 
         Student::create([
@@ -50,9 +50,13 @@ class StudentController extends Controller
         return back()->with('success', 'Student has been Added successfully!');
     }
 
-    public function show()
+    public function show($id)
     {
-        return view('client.student.show-student');
+        $student = Student::join('programs', 'students.st_program', '=', 'programs.id')
+            ->join('departments', 'students.st_dept', '=', 'departments.id')
+            ->where('students.id', $id)
+            ->first(['students.*', 'programs.pg_name as pg_name', 'departments.dpt_name as dpt_name']);
+        return view('client.student.show-student', compact('student'));
     }
 
     public function manage()

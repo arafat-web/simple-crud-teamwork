@@ -86,15 +86,15 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                @foreach($students as $st)
+                            @foreach($students as $st)
+                                <tr>
                                     <td>{{$st->st_id}}</td>
                                     <td>{{$st->st_name}}</td>
                                     <td>{{$st->st_phone}}</td>
                                     <td>{{$st->st_email}}</td>
                                     <td>{{$st->dpt_name}}</td>
                                     <td>{{$st->pg_name}}</td>
-                            </tr>
+                                </tr>
                             @endforeach
                             </tbody>
                         </table>
@@ -103,4 +103,16 @@
             </div>
         </div>
     </main>
+    <script>
+        $(document).ready(function () {
+            $('#datatable').DataTable({
+                paging: false,
+                info: true,
+                dom: 'Bfrtip',
+                select: true,
+                pageLength: 5,
+                recordsTotal: 10,
+            });
+        });
+    </script>
 @endsection

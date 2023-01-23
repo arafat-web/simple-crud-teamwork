@@ -31,7 +31,7 @@ class ProgramController extends Controller
     private function getImageUrl($request){
         $this->image = $request->file('pg_image');
         $this->imageName = rand().'.'.$this->image->getClientOriginalExtension();
-        $this->directory = 'images/program/';
+        $this->directory = 'upload/program/';
         $this->imageUrl = $this->directory.$this->imageName;
         $this->image->move($this->directory,$this->imageName);
         return $this->imageUrl;
